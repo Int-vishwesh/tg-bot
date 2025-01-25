@@ -22,11 +22,11 @@ async def start(update: Update, context: CallbackContext):
 # Command: /help
 async def help(update: Update, context: CallbackContext) -> None:
     help_text = (
-        "this is a simple reel downloader, without any much difficulties \n FAST, EASY & FREE \n Here are the commands you can use:\n"
+        "this is a simple reel downloader, without any much difficulties \n FAST, EASY & FREE 🥸 \n Here are the commands you can use:\n"
         "/start - Start the bot\n"
-        "send link anytime to download reel"
         "/help - Show available commands\n"
         "/social - contact me! social media link\n"
+        "to download simply send link anytime  \n"
     )
     await update.message.reply_text(help_text)
 
