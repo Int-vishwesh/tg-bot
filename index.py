@@ -17,7 +17,22 @@ L = instaloader.Instaloader()
 
 # Command: /start
 async def start(update: Update, context: CallbackContext):
-    await update.message.reply_text("Welcome to the bot, send me a reel URL to download it.")
+    await update.message.reply_text("Welcome to the GETinsta bot, \n send me a reel URL to download it.😇 \n \n Type /help for more info")
+
+# Command: /help
+async def help(update: Update, context: CallbackContext) -> None:
+    help_text = (
+        "this is a simple reel downloader, without any much difficulties \n FAST, EASY & FREE \n Here are the commands you can use:\n"
+        "/start - Start the bot\n"
+        "send link anytime to download reel"
+        "/help - Show available commands\n"
+        "/social - contact me! social media link\n"
+    )
+    await update.message.reply_text(help_text)
+
+# Command: /social
+async def social(update: Update, context: CallbackContext) -> None:
+    await update.message.reply_text("try our website too & Follow on 😽 \n Instagram: https://instagram.com/actually.jerry \n website : https://get-insta.netlify.app \n github: https://github.com/Int-vishwesh \n linkedIN : linkedin.com/in/vishwesh-aryan-608691236")
 
 # Function to handle messages containing reel URLs
 async def handle_reel_url(update: Update, context: CallbackContext):
@@ -64,6 +79,8 @@ def main():
     
     # Command handler for /start
     application.add_handler(CommandHandler('start', start))
+    application.add_handler(CommandHandler("help", help))
+    application.add_handler(CommandHandler("social", social))
     
     # Message handler for reel URLs
     application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_reel_url))

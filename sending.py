@@ -3,7 +3,7 @@ from telegram.ext import Application, CommandHandler
 from telegram.utils.request import Request
 
 # Replace with your bot's token
-TOKEN = '7591928251:AAGCfZL9EKMbBJL98ZmXK0j-yaNROuHfBmA'
+TOKEN = ''
 
 async def start(update, context):
     await update.message.reply_text("Welcome! Type /send to get a file from me.")
